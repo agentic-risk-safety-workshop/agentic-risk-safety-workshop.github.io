@@ -1,14 +1,2 @@
-github_users:
-  - torvalds
-  - alshedivat
+# Repositories data - not used for workshop
 
-repo_description_lines_max: 2
-
-github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons

@@ -1,34 +1,333 @@
 ---
-layout: about
-title: about
+layout: page
+title: Home
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
-
-profile:
-  align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
-  more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
-
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
-
-announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
-
-latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+nav: false
+description: ""
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](http://reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<style>
+/* Remove default spacing */
+.post-header { display: none !important; margin: 0 !important; padding: 0 !important; height: 0 !important; }
+.post { margin-top: 0 !important; padding-top: 0 !important; }
+.post > article { margin-top: 0 !important; padding-top: 0 !important; }
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+/* ===== Hero Banner ===== */
+.hero {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 100px 24px;
+  margin-top: -20px;
+  margin-bottom: 48px;
+  text-align: center;
+  background: url('https://images.unsplash.com/photo-1546874177-9e664107314e?w=1920&q=80') center/cover no-repeat;
+}
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(15,23,42,0.82) 0%, rgba(30,27,75,0.75) 50%, rgba(15,23,42,0.88) 100%);
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(139,92,246,0.12) 0%, transparent 60%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(139,92,246,0.25);
+  border: 1px solid rgba(139,92,246,0.4);
+  color: #c4b5fd;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 20px;
+  letter-spacing: -0.5px;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+.hero-sub {
+  font-size: 1.15rem;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.hero-sub strong {
+  color: #c7d2fe;
+  font-weight: 500;
+}
+
+/* ===== Sections ===== */
+.section { margin: 48px 0; }
+
+.section h2 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 20px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #e5e7eb;
+}
+
+.section p {
+  color: #374151;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+/* ===== Topics List ===== */
+.topics-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.topics-list li {
+  position: relative;
+  padding: 6px 0 6px 20px;
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.topics-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.topics-list li strong {
+  color: #111827;
+  font-weight: 600;
+}
+
+/* ===== People ===== */
+.people {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.25rem;
+  margin: 24px 0;
+}
+
+@media (max-width: 768px) {
+  .people { grid-template-columns: repeat(2, 1fr); }
+}
+
+.person {
+  text-align: center;
+  padding: 20px 12px 16px;
+}
+
+.person img {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #e5e7eb;
+  transition: all 0.2s;
+}
+
+.person:hover img {
+  border-color: #a5b4fc;
+  transform: scale(1.03);
+}
+
+.person-name {
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #1f2937;
+  margin: 0 0 2px;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.person-aff {
+  font-size: 0.65rem;
+  font-weight: 400;
+  color: #9ca3af;
+  margin: 0;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  transform: scale(0.85);
+  transform-origin: center top;
+}
+
+/* ===== Dates ===== */
+.dates-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.dates-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 1rem;
+}
+
+.dates-list li:last-child {
+  border-bottom: none;
+}
+
+.dates-list .label {
+  color: #374151;
+}
+
+.dates-list .value {
+  color: #6366f1;
+  font-weight: 600;
+}
+
+/* ===== Contact ===== */
+.contact-box {
+  background: #f9fafb;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  margin: 24px 0;
+}
+
+.contact-box p {
+  margin: 0;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.contact-box a {
+  color: #4f46e5;
+  font-weight: 600;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 640px) {
+  .hero { padding: 60px 20px; }
+  .hero h1 { font-size: 2rem; }
+  .people { gap: 1rem; }
+  .person { padding: 16px 8px 12px; }
+  .person img { width: 72px; height: 72px; }
+  .person-name { font-size: 0.75rem; }
+  .person-aff { font-size: 0.4rem; }
+  .dates-list li { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+/* ===== Dark Mode ===== */
+html[data-theme='dark'] .section h2 { color: #f3f4f6; border-color: #374155; }
+html[data-theme='dark'] .section p { color: #d1d5db; }
+html[data-theme='dark'] .topics-list li { color: #d1d5db; }
+html[data-theme='dark'] .topics-list li strong { color: #f3f4f6; }
+html[data-theme='dark'] .person-name { color: #f3f4f6; }
+html[data-theme='dark'] .person-aff { color: #6b7280; }
+html[data-theme='dark'] .person img { border-color: #4b5563; }
+html[data-theme='dark'] .person:hover img { border-color: #818cf8; }
+html[data-theme='dark'] .dates-list li { border-color: #374155; }
+html[data-theme='dark'] .dates-list .label { color: #d1d5db; }
+html[data-theme='dark'] .dates-list .value { color: #a5b4fc; }
+html[data-theme='dark'] .contact-box { background: #1f2937; }
+html[data-theme='dark'] .contact-box p { color: #d1d5db; }
+html[data-theme='dark'] .contact-box a { color: #a5b4fc; }
+</style>
+
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">ICML 2026 Workshop</div>
+    <h1>Risk & Safety in Agentic AI</h1>
+    <p class="hero-sub"><strong>📍 Seoul, South Korea · July 2026</strong><br>Exploring safety challenges and risk mitigation for agentic AI systems</p>
+  </div>
+</div>
+
+<div class="section">
+<h2>About</h2>
+<p>Agentic AI systems capable of long-horizon autonomy and real-world interaction are becoming increasingly powerful and widely deployed, raising safety concerns. This workshop provides a forum for researchers and practitioners to study failure modes, risks, and approaches for improving the safety and robustness of agentic AI systems.</p>
+</div>
+
+<div class="section">
+  <h2>Topics</h2>
+  <ul class="topics-list">
+  <li>Risk assessment and failure analysis for agentic AI systems</li>
+  <li>Red-teaming and adversarial evaluation of agentic behavior</li>
+  <li>Robustness and generalization under distribution shift</li>
+  <li>Safety challenges in multi-agent systems and coordination</li>
+  <li>Guardrails and safety mechanisms for agentic systems</li>
+  <li>Governance, oversight, and policy considerations for agentic AI</li>
+  <li>Case studies of real-world deployment such as web agents and workflow automation</li>
+</ul>
+</div>
+
+
+
+<div class="section">
+<h2>Speakers</h2>
+<div class="people">
+{% for speaker in site.data.speakers %}
+  <div class="person">
+    <img src="{{ speaker.image }}" alt="{{ speaker.name }}">
+    <p class="person-name">{{ speaker.name }}</p>
+    <p class="person-aff">{{ speaker.affiliation }}</p>
+  </div>
+{% endfor %}
+</div>
+</div>
+
+<div class="section">
+<h2>Organizers</h2>
+<div class="people">
+{% for organizer in site.data.organizers %}
+  <div class="person">
+    <img src="{{ organizer.image }}" alt="{{ organizer.name }}">
+    <p class="person-name">{{ organizer.name }}</p>
+    <p class="person-aff">{{ organizer.affiliation }}</p>
+  </div>
+{% endfor %}
+</div>
+</div>
+
+<div class="section">
+<h2>Important Dates</h2>
+<ul class="dates-list">
+  <li><span class="label">Submission Deadline</span><span class="value">TBA</span></li>
+  <li><span class="label">Notification</span><span class="value">TBA</span></li>
+  <li><span class="label">Camera-Ready</span><span class="value">TBA</span></li>
+  <li><span class="label">Workshop</span><span class="value">TBA</span></li>
+</ul>
+</div>
+
+<div class="section">
+  <h2>Contact</h2>
+  <div class="contact-box">
+    <p>
+      Questions? Email us at
+      <a href="mailto:zijing.shi-1@uts.edu.au">zijing.shi-1@uts.edu.au</a>
+    </p>
+  </div>
+</div>
+
