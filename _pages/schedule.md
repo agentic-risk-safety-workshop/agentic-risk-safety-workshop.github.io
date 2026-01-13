@@ -173,7 +173,7 @@ nav_order: 3
 <div class="speakers-grid">
 {% for speaker in site.data.speakers %}
   <div class="speaker">
-    <div class="speaker-avatar"><img src="{{ speaker.image }}" alt="{{ speaker.name }}"></div>
+    <div class="speaker-avatar"><img src="{{ speaker.image | relative_url }}" alt="{{ speaker.name }}"></div>
     <div class="speaker-name">{{ speaker.name }}</div>
     <div class="speaker-affiliation">{{ speaker.affiliation }}</div>
   </div>

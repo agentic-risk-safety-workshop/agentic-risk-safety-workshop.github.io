@@ -22,7 +22,7 @@ description: ""
   margin-top: -20px;
   margin-bottom: 48px;
   text-align: center;
-  background: url('https://images.unsplash.com/photo-1546874177-9e664107314e?w=1920&q=80') center/cover no-repeat;
+  background: url('{{ "/assets/img/banner.jpeg" | relative_url }}') center/cover no-repeat;
 }
 
 .hero::before {
@@ -298,7 +298,7 @@ html[data-theme='dark'] .contact-box a { color: #a5b4fc; }
 <div class="people">
 {% for speaker in site.data.speakers %}
   <div class="person">
-    <img src="{{ speaker.image }}" alt="{{ speaker.name }}">
+    <img src="{{ speaker.image | relative_url }}" alt="{{ speaker.name }}">
     <p class="person-name">{{ speaker.name }}</p>
     <p class="person-aff">{{ speaker.affiliation }}</p>
   </div>
@@ -311,7 +311,7 @@ html[data-theme='dark'] .contact-box a { color: #a5b4fc; }
 <div class="people">
 {% for organizer in site.data.organizers %}
   <div class="person">
-    <img src="{{ organizer.image }}" alt="{{ organizer.name }}">
+    <img src="{{ organizer.image | relative_url }}" alt="{{ organizer.name }}">
     <p class="person-name">{{ organizer.name }}</p>
     <p class="person-aff">{{ organizer.affiliation }}</p>
   </div>

@@ -87,7 +87,7 @@ nav_order: 4
 <div class="organizers-grid">
 {% for organizer in site.data.organizers %}
   <div class="organizer">
-    <div class="organizer-avatar"><img src="{{ organizer.image }}" alt="{{ organizer.name }}"></div>
+    <div class="organizer-avatar"><img src="{{ organizer.image | relative_url }}" alt="{{ organizer.name }}"></div>
     <div class="organizer-name">{{ organizer.name }}</div>
     <div class="organizer-affiliation">{{ organizer.affiliation }}</div>
   </div>
