@@ -80,6 +80,40 @@ nav_order: 4
 .contact-link:hover {
   text-decoration: underline;
 }
+
+/* ===== Dark Mode ===== */
+html[data-theme='dark'] .section h2 {
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+html[data-theme='dark'] .organizer {
+  background: #1f2937;
+}
+
+html[data-theme='dark'] .organizer:hover {
+  background: #374151;
+}
+
+html[data-theme='dark'] .organizer-avatar {
+  border-color: #4b5563;
+}
+
+html[data-theme='dark'] .organizer-name {
+  color: #f3f4f6;
+}
+
+html[data-theme='dark'] .organizer-affiliation {
+  color: #9ca3af;
+}
+
+html[data-theme='dark'] .contact-link {
+  color: #a5b4fc;
+}
+
+html[data-theme='dark'] p {
+  color: #d1d5db;
+}
 </style>
 
 <div class="section">

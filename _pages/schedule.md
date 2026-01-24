@@ -130,6 +130,61 @@ nav_order: 3
   font-style: italic;
   font-size: 0.95rem;
 }
+
+/* ===== Dark Mode ===== */
+html[data-theme='dark'] .schedule-note {
+  color: #6b7280;
+}
+
+html[data-theme='dark'] .section h2 {
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+html[data-theme='dark'] .schedule-table th {
+  color: #9ca3af;
+  border-color: #374151;
+}
+
+html[data-theme='dark'] .schedule-table td {
+  border-color: #374151;
+}
+
+html[data-theme='dark'] .time {
+  color: #a5b4fc;
+}
+
+html[data-theme='dark'] .event {
+  color: #d1d5db;
+}
+
+html[data-theme='dark'] .event-break {
+  color: #6b7280;
+}
+
+html[data-theme='dark'] .speaker {
+  background: #1f2937;
+}
+
+html[data-theme='dark'] .speaker:hover {
+  background: #374151;
+}
+
+html[data-theme='dark'] .speaker-avatar {
+  border-color: #4b5563;
+}
+
+html[data-theme='dark'] .speaker-name {
+  color: #f3f4f6;
+}
+
+html[data-theme='dark'] .speaker-affiliation {
+  color: #9ca3af;
+}
+
+html[data-theme='dark'] .placeholder {
+  color: #6b7280;
+}
 </style>
 
 <p class="schedule-note">The detailed schedule will be announced closer to the workshop date.</p>

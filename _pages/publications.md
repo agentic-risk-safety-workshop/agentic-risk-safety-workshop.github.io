@@ -91,10 +91,44 @@ nav_order: 2
 .contact-link:hover {
   text-decoration: underline;
 }
+
+/* ===== Dark Mode ===== */
+html[data-theme='dark'] .cfp-intro {
+  color: #d1d5db;
+}
+
+html[data-theme='dark'] .cfp-section h2 {
+  color: #f3f4f6;
+  border-color: #374151;
+}
+
+html[data-theme='dark'] .topics-list li {
+  color: #d1d5db;
+}
+
+html[data-theme='dark'] .info-table td {
+  border-color: #374151;
+}
+
+html[data-theme='dark'] .info-table td:first-child {
+  color: #9ca3af;
+}
+
+html[data-theme='dark'] .info-table td:last-child {
+  color: #f3f4f6;
+}
+
+html[data-theme='dark'] .note {
+  color: #6b7280;
+}
+
+html[data-theme='dark'] .contact-link {
+  color: #a5b4fc;
+}
 </style>
 
 <p class="cfp-intro">
-We invite submissions of original research papers on topics related to <strong>agentic AI safety and risk</strong>. Both empirical studies and conceptual contributions are welcome.
+We invite submissions of original research papers on topics related to agentic AI safety and risk. Both empirical studies and conceptual contributions are welcome.
 </p>
 
 <div class="cfp-section">
